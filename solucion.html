@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+<body>
+    <main>
+       
+            <header class="cabecera">
+                <picture style="margin: 10px;">
+                    <source media="(min-width: 500px)" srcset="imagenes/Logo.png">
+                    <img id="imagenTitulo" src="imagenes/Logop.png" alt="Logo CIFP">
+                </picture>
+                <h1 id="titulo">Servicios Municipales</h1>
+
+            </header>
+    <img src="./imagenes/lupa.jpg" id="lupa"   /> </img>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Duración</th>
+                <th scope="col">Calle</th>
+
+            </tr>
+        </thead>
+        <tbody id="cuerpoServicios">
+            <tr>
+                <!--<td data-label="ID">Visa - 3412</td>
+            <td data-label="Nombre">04/01/2016</td>
+            <td data-label="Email">$1,190</td>
+            <td data-label="Tipo">03/01/2016 - 03/31/2016</td>
+          </tr>-->
+        </tbody>
+    </table>   
+
+    <div class="map_canvas" id="map_canvas" style="width: 300px;height: 300px;">
+    </div>
+
+
+</main>
+</body>
+
+<script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeNRBEIWYeWRRvY8On_9pkSD1_J_zLykQ&libraries=geometry">
+
+    </script> <script src="./js/funciones.js"></script>      
+    <script src="./js/datos.js"></script>
+    <script type="text/javascript" src="./js/BdWebSql.js"></script> 
+
+   
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas2image@1.0.5/canvas2image.js"></script>
+
+    <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeNRBEIWYeWRRvY8On_9pkSD1_J_zLykQ&libraries=geometry">
+
+    </script>
+</head>
+<body>
+    <a href="http://jsfiddle.net/Behseini/j17mwmjm/">Funciona</a>
+    <div id="widget"  style="width:150px;height: 150px;"></div>
+    
+<br/>
+<input type="button" id="btnSave" onclick="copiar()" value="Save PNG"/>
+
+<div id="img-out" style="background-color: blueviolet;width:150px;height: 150px;"></div>
+<canvas id="micanvas" style="background-color: rgb(39, 150, 158);width:150px;height: 150px;">
+</canvas>
+<script>
+    var map;
+var latitud = 41.67097948393865;
+var longitud = -3.6769259916763985;
+ function cargar () { 
+
+map = new google.maps.Map(
+    document.getElementById('widget'), {
+    // En el mapa se visualiza el mapa correspondiente a esta latitud, longitud
+        center: new google.maps.LatLng(latitud,longitud),//latitud,longitud),//
+       // center: new google.maps.LatLng(41.6685198,-3.6886618),//latitud,longitud),//
+    zoom: 18, // zoom del mapa
+    draggableCursor: 'auto', // forma del cursor
+    draggingCursor: 'crosshair',
+    mapTypeId: google.maps.MapTypeId.SATELLITE // tipo de mama
+});
+
+
+ //   map = new google.maps.Map(document.getElementById("widget"), myOptions); 
+    
+     
+}; 
+function copiar() { 
+    alert("copiar 0") 
+        html2canvas(document.getElementById("widget")), {
+            
+            useCORS: true,allowTaint:true,
+            onrendered: function(canvas) {
+                alert("copiar 1") 
+                theCanvas = canvas;
+                document.body.appendChild(canvas);
+                micanvas= document.getElementById("micanvas");
+                alert("copiar 2")
+                // Convert and download as image 
+                Canvas2Image.saveAsPNG(canvas); 
+                Canvas2Image.saveAsPNG(micanvas); 
+                document.getElementById("img-out").append(canvas);
+                // Clean up 
+                //document.body.removeChild(canvas);
+            }
+        };
+    };
+cargar()
+</script>
+
+</body>
+
+
+
+
+</html>
